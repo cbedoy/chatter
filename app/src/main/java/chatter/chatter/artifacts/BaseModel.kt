@@ -12,7 +12,7 @@ interface BaseModel{
         CHANNEL(1),
         BUDDY(2),
         SETTINGS(3),
-        AVATAR(4),
+        HEADER(4),
         ACTION(5),
         OPTION(6)
     }

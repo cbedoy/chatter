@@ -5,10 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import chatter.chatter.artifacts.BaseModel
 import chatter.chatter.artifacts.BaseViewHolder
-import chatter.chatter.artifacts.holders.ActionHolder
-import chatter.chatter.artifacts.holders.BuddyHolder
-import chatter.chatter.artifacts.holders.ChannelHolder
-import chatter.chatter.artifacts.holders.OptionHolder
+import chatter.chatter.artifacts.holders.*
 
 /**
  * Chatter
@@ -38,6 +35,11 @@ class ChatterAdapter(private val dataModel: ArrayList<BaseModel>) : RecyclerView
                 val view = LayoutInflater.from(parent.context).inflate(R.layout.option_holder, parent, false)
 
                 OptionHolder(view)
+            }
+            BaseModel.TYPE.HEADER.value -> {
+                val view = LayoutInflater.from(parent.context).inflate(R.layout.header_holder, parent, false)
+
+                HeaderHolder(view)
             }
             else -> {
                 val view = LayoutInflater.from(parent.context).inflate(R.layout.action_holder, parent, false)

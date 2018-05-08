@@ -9,10 +9,10 @@
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-    <!-- The navigation drawer -->
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/navigation_drawer_recycler_view"
-        android:layout_width="240dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:divider="@android:color/transparent"

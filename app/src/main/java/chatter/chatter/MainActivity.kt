@@ -12,6 +12,7 @@ import chatter.chatter.artifacts.BaseModel
 import chatter.chatter.artifacts.BaseViewHolder
 import chatter.chatter.artifacts.models.Action
 import chatter.chatter.artifacts.models.Channel
+import chatter.chatter.artifacts.models.Header
 import chatter.chatter.artifacts.models.Option
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -41,6 +42,12 @@ class MainActivity : AppCompatActivity() {
         arrayList.add(channel)
 
         */
+
+        val header = Header()
+        header.avatar = "https://scontent.fntr2-1.fna.fbcdn.net/v/t1.0-1/p480x480/31947993_2450363504990000_8814635117579337728_n.jpg?_nc_cat=0&oh=fab6659e1faad208e444175fc2a8ecd7&oe=5B5ABE92"
+        header.email = "carlos.bedoy@gmail.com"
+        header.nickname = "#iambedoy"
+        arrayList.add(header)
 
         var option = Option()
 
