@@ -12,6 +12,7 @@ import chatter.chatter.artifacts.BaseModel
 import chatter.chatter.artifacts.BaseViewHolder
 import chatter.chatter.artifacts.models.Action
 import chatter.chatter.artifacts.models.Channel
+import chatter.chatter.artifacts.models.Option
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         val arrayList = ArrayList<BaseModel>()
 
+        /*
         var channel = Channel()
         channel.avatar = "https://ae01.alicdn.com/kf/HTB1mB2BQFXXXXcfXVXXq6xXFXXX8/Full-Swimsuit-Stripe-Open-Hot-Sexy-Girl-Swimwear-Summer-Biki-M17072.jpg_640x640.jpg"
         channel.name = "Sexy girls"
@@ -37,6 +39,33 @@ class MainActivity : AppCompatActivity() {
         channel.avatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHg35FcS4RI8O_lckszIJ_D-Vis6FyaKV8rKW857NhtOC7Pk5x"
         channel.name = "Xiami"
         arrayList.add(channel)
+
+        */
+
+        var option = Option()
+
+        option.title = getString(R.string.channels)
+        option.resource = R.drawable.ic_action_channels
+        option.listener = View.OnClickListener {
+
+        }
+        arrayList.add(option)
+
+        option = Option()
+        option.title = getString(R.string.buddies)
+        option.resource = R.drawable.ic_action_buddies
+        option.listener = View.OnClickListener {
+
+        }
+        arrayList.add(option)
+
+        option = Option()
+        option.title = getString(R.string.settings)
+        option.resource = R.drawable.ic_action_settings
+        option.listener = View.OnClickListener {
+
+        }
+        arrayList.add(option)
 
 
         val action = Action()

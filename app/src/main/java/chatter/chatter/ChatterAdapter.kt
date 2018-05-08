@@ -8,6 +8,7 @@ import chatter.chatter.artifacts.BaseViewHolder
 import chatter.chatter.artifacts.holders.ActionHolder
 import chatter.chatter.artifacts.holders.BuddyHolder
 import chatter.chatter.artifacts.holders.ChannelHolder
+import chatter.chatter.artifacts.holders.OptionHolder
 
 /**
  * Chatter
@@ -32,6 +33,11 @@ class ChatterAdapter(private val dataModel: ArrayList<BaseModel>) : RecyclerView
                 val view = LayoutInflater.from(parent.context).inflate(R.layout.buddy_holder, parent, false)
 
                 BuddyHolder(view)
+            }
+            BaseModel.TYPE.OPTION.value -> {
+                val view = LayoutInflater.from(parent.context).inflate(R.layout.option_holder, parent, false)
+
+                OptionHolder(view)
             }
             else -> {
                 val view = LayoutInflater.from(parent.context).inflate(R.layout.action_holder, parent, false)

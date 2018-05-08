@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_margin="16dp"
+        android:layout_width="32dp"
+        android:id="@+id/option_holder_resource"
+        android:src="@drawable/ic_action_buddies"
+        android:layout_height="32dp" />
+
+    <TextView
+        android:id="@+id/option_holder_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="-16dp"
+        android:layout_toEndOf="@+id/option_holder_resource"
+        android:maxLines="1"
+        android:padding="16dp"
+        android:text="@string/lorem"
+        android:textColor="@color/primary"
+        android:textSize="16sp" />
+
+
+</RelativeLayout>

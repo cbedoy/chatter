@@ -13,6 +13,7 @@ interface BaseModel{
         BUDDY(2),
         SETTINGS(3),
         AVATAR(4),
-        ACTION(5)
+        ACTION(5),
+        OPTION(6)
     }
 }

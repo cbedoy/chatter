@@ -1,0 +1,20 @@
+package chatter.chatter.artifacts.models
+
+import chatter.chatter.artifacts.BaseModel
+
+/**
+ * Chatter
+ *
+ * Created by bedoy on 5/7/18.
+ */
+class Holder : BaseModel{
+
+    var avatar : String? = null
+    var nickname : String? = null
+    var email : String? = null
+
+    override fun getType(): Int {
+        return BaseModel.TYPE.AVATAR.value
+    }
+
+}
