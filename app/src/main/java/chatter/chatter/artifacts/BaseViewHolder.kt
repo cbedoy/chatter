@@ -1,6 +1,5 @@
 package chatter.chatter.artifacts
 
-import android.support.v7.view.menu.ActionMenuItemView
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import kotlinx.android.extensions.LayoutContainer
