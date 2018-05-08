@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_margin="16dp"
+        android:layout_width="60dp"
+        android:id="@+id/channel_holder_avatar"
+        android:src="@color/colorAccent"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:id="@+id/channel_holder_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-16dp"
+        android:layout_toEndOf="@+id/channel_holder_avatar"
+        android:maxLines="1"
+        android:textColor="@color/primary"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:text="@string/lorem"
+        android:textSize="18sp" />
+
+    <TextView
+        android:textColor="@color/secondary"
+        android:id="@+id/channel_holder_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        android:paddingBottom="8dp"
+        android:layout_alignStart="@+id/channel_holder_title"
+        android:layout_below="@+id/channel_holder_title"
+        android:text="@string/lorem"
+        android:textSize="16sp" />
+
+</RelativeLayout>
