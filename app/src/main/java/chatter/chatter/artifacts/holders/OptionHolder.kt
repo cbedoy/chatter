@@ -15,6 +15,8 @@ class OptionHolder(override val containerView: View?) : BaseViewHolder(container
     override fun reloadData(model: BaseModel) {
         model as Option
 
+        containerView?.setOnClickListener(model.listener)
+
         option_holder_title.text = model.title
 
         if (model.resource != null){

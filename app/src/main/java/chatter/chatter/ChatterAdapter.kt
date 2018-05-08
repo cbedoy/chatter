@@ -41,6 +41,11 @@ class ChatterAdapter(private val dataModel: ArrayList<BaseModel>) : RecyclerView
 
                 HeaderHolder(view)
             }
+            BaseModel.TYPE.DIVIDER.value -> {
+                val view = LayoutInflater.from(parent.context).inflate(R.layout.divider_holder, parent, false)
+
+                DividerHolder(view)
+            }
             else -> {
                 val view = LayoutInflater.from(parent.context).inflate(R.layout.action_holder, parent, false)
 

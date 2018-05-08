@@ -9,6 +9,12 @@ import chatter.chatter.artifacts.BaseModel
  * Created by bedoy on 5/7/18.
  */
 class Action : BaseModel{
+    override fun getId(): String {
+        if (identifier == null){
+            throw Exception("Identifier can't be null")
+        }
+        return identifier as String
+    }
 
     var identifier : String? = null
     var title : Int? = null

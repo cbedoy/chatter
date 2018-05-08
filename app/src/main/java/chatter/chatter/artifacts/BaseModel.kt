@@ -8,12 +8,15 @@ package chatter.chatter.artifacts
 interface BaseModel{
     fun getType() : Int
 
+    fun getId() : String
+
     enum class TYPE private constructor(val value: Int) {
         CHANNEL(1),
         BUDDY(2),
         SETTINGS(3),
         HEADER(4),
         ACTION(5),
-        OPTION(6)
+        OPTION(6),
+        DIVIDER(7)
     }
 }

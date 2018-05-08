@@ -10,6 +10,7 @@ import chatter.chatter.artifacts.BaseModel
  */
 class Buddy : BaseModel {
 
+
     var identifier: String? = null
     var nickname: String? = null
     var textColor: Int? = null
@@ -18,5 +19,12 @@ class Buddy : BaseModel {
 
     override fun getType(): Int {
         return BaseModel.TYPE.BUDDY.value
+    }
+
+    override fun getId(): String {
+        if (identifier == null){
+            throw Exception("Identifier can't be null")
+        }
+        return identifier as String
     }
 }

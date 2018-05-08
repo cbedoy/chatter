@@ -16,4 +16,11 @@ class Option : BaseModel{
     var title : String? = null
     var listener : View.OnClickListener? = null
     var resource : Int? = null
+
+    override fun getId(): String {
+        if (resource == null){
+            throw Exception("Identifier can't be null")
+        }
+        return resource as String
+    }
 }
