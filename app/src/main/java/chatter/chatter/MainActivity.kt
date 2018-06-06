@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.BaseAdapter
 import android.widget.LinearLayout.VERTICAL
@@ -16,6 +17,7 @@ import chatter.chatter.artifacts.models.Channel
 import chatter.chatter.artifacts.models.Header
 import chatter.chatter.artifacts.models.Option
 import chatter.chatter.backend.BaseViewController
+import chatter.chatter.backend.BuddiesViewController
 import chatter.chatter.backend.ChannelsViewController
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
@@ -30,11 +32,12 @@ class MainActivity : AppCompatActivity() {
 
 
         viewControllers["channels"] = ChannelsViewController()
+        viewControllers["buddies"] = BuddiesViewController()
 
         val arrayList = ArrayList<BaseModel>()
 
         val header = Header()
-        header.avatar = "https://scontent.fntr2-1.fna.fbcdn.net/v/t1.0-1/p480x480/31947993_2450363504990000_8814635117579337728_n.jpg?_nc_cat=0&oh=fab6659e1faad208e444175fc2a8ecd7&oe=5B5ABE92"
+        header.avatar = "https://scontent.fmex4-1.fna.fbcdn.net/v/t1.0-1/c4.0.320.320/p320x320/33748331_2486054888087528_1948593341838917632_n.jpg?_nc_cat=0&oh=d8c82668fefa54002a4299b2cdaab295&oe=5BC0B669"
         header.email = "carlos.bedoy@gmail.com"
         header.nickname = "#iambedoy"
         arrayList.add(header)
@@ -54,7 +57,9 @@ class MainActivity : AppCompatActivity() {
         option.title = getString(R.string.buddies)
         option.resource = R.drawable.ic_action_buddies
         option.listener = View.OnClickListener {
-
+            if (viewControllers.containsKey("buddies")){
+                showViewController(viewControllers["buddies"])
+            }
         }
         arrayList.add(option)
 

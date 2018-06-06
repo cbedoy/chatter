@@ -110,11 +110,13 @@ object PNController {
         })
     }
 
-    fun subscribeToChannel(channel: String){
+    fun subscribeToChannel(channel: String?){
 
-        val channels = Arrays.asList(channel)
+        if (channel != null) {
+            val channels = Arrays.asList(channel)
 
-        pubNub?.subscribe()?.channels(channels)?.execute()
+            pubNub?.subscribe()?.channels(channels)?.execute()
+        }
     }
 
     fun unsubscribeFromChannel(channel: String){

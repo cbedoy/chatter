@@ -19,5 +19,6 @@ class BuddyHolder(override val containerView: View?) : BaseViewHolder(containerV
         Glide.with(itemView?.context).load(model.avatar).into(buddy_holder_avatar)
 
         buddy_holder_title.text = model.nickname
+        buddy_holder_online.visibility = if(model.online) View.VISIBLE else View.INVISIBLE
     }
 }

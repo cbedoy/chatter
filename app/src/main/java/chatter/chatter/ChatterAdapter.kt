@@ -14,6 +14,8 @@ import chatter.chatter.artifacts.holders.*
  */
 class ChatterAdapter(private val dataModel: ArrayList<BaseModel>) : RecyclerView.Adapter<BaseViewHolder>() {
 
+    var chatterAdapterListener : ChatterAdapterListener ? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         return when (viewType) {
             BaseModel.TYPE.ACTION.value -> {
@@ -46,6 +48,11 @@ class ChatterAdapter(private val dataModel: ArrayList<BaseModel>) : RecyclerView
 
                 DividerHolder(view)
             }
+            BaseModel.TYPE.DIVIDER_TITLE.value -> {
+                val view = LayoutInflater.from(parent.context).inflate(R.layout.divider_title_holder, parent, false)
+
+                DividerTitleHolder(view)
+            }
             else -> {
                 val view = LayoutInflater.from(parent.context).inflate(R.layout.action_holder, parent, false)
 
@@ -64,6 +71,14 @@ class ChatterAdapter(private val dataModel: ArrayList<BaseModel>) : RecyclerView
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         holder.reloadData(dataModel[position])
+
+        holder.itemView.setOnClickListener {
+            chatterAdapterListener?.onClickElement(dataModel[position])
+        }
+    }
+
+    interface ChatterAdapterListener{
+        fun onClickElement(element : BaseModel)
     }
 
 }

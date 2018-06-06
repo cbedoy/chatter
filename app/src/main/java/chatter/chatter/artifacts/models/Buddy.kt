@@ -16,6 +16,7 @@ class Buddy : BaseModel {
     var textColor: Int? = null
     var listener: View.OnClickListener? = null
     var avatar: String? = null
+    var online : Boolean = false
 
     override fun getType(): Int {
         return BaseModel.TYPE.BUDDY.value

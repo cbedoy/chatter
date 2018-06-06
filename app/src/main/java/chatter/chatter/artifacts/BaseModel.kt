@@ -17,6 +17,8 @@ interface BaseModel{
         HEADER(4),
         ACTION(5),
         OPTION(6),
-        DIVIDER(7)
+        DIVIDER(7),
+        MESSAGE(8),
+        DIVIDER_TITLE(9),
     }
 }
