@@ -19,7 +19,7 @@ abstract class BaseViewController : Fragment() {
         thread.start()
         val handler = Handler(thread.looper)
 
-        Timber.d(tag, "runOnAsync: " + taskName)
+        Timber.d(tag, "runOnAsync: $taskName")
 
         handler.post {
             process?.runOnAsync()
