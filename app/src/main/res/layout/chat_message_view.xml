@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="40dp"
+        android:id="@+id/chat_message_avatar"
+        android:src="@color/colorAccent"
+        android:layout_height="40dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="16dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/backgroundColor"
+        android:id="@+id/chat_message_online"
+        android:src="@color/colorPrimary"
+        android:layout_height="16dp" />
+
+    <TextView
+        android:textColor="@color/primary"
+        android:paddingEnd="16dp"
+        android:id="@+id/chat_message_title"
+        android:maxLines="1"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/chat_message_avatar"
+        android:layout_toEndOf="@+id/chat_message_avatar"
+        android:text="@string/mock_title" />
+
+    <TextView
+        android:textSize="15sp"
+        android:textColor="@color/secondary"
+        android:id="@+id/chat_message_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_message_title"
+        android:layout_toEndOf="@+id/chat_message_avatar"
+        android:text="@string/mock_message" />
+
+
+</RelativeLayout>

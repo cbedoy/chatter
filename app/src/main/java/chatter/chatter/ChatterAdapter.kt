@@ -53,6 +53,11 @@ class ChatterAdapter(private val dataModel: ArrayList<BaseModel>) : RecyclerView
 
                 DividerTitleHolder(view)
             }
+            BaseModel.TYPE.MESSAGE.value -> {
+                val view = LayoutInflater.from(parent.context).inflate(R.layout.chat_message_view, parent, false)
+
+                ChatMessageHolder(view)
+            }
             else -> {
                 val view = LayoutInflater.from(parent.context).inflate(R.layout.action_holder, parent, false)
 

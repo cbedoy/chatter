@@ -7,4 +7,6 @@
     <string name="settings">Settings</string>
     <string name="write_a_message">Write a message...</string>
     <string name="send">Send</string>
+    <string name="mock_title">Carly Chaikin</string>
+    <string name="mock_message">Here\'s a message</string>
 </resources>

@@ -1,5 +1,7 @@
 package chatter.chatter
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
@@ -12,20 +14,30 @@ import android.widget.LinearLayout.VERTICAL
 import android.widget.Toast
 import chatter.chatter.artifacts.BaseModel
 import chatter.chatter.artifacts.BaseViewHolder
-import chatter.chatter.artifacts.models.Action
-import chatter.chatter.artifacts.models.Channel
-import chatter.chatter.artifacts.models.Header
-import chatter.chatter.artifacts.models.Option
+import chatter.chatter.artifacts.models.*
 import chatter.chatter.backend.BaseViewController
 import chatter.chatter.backend.BuddiesViewController
 import chatter.chatter.backend.ChannelsViewController
+import chatter.chatter.core.PNController
+import com.pubnub.api.PubNub
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
+import java.util.*
+import android.hardware.usb.UsbDevice.getDeviceId
+import android.content.Context.TELEPHONY_SERVICE
+import android.provider.Settings
+import android.telephony.TelephonyManager
+import android.provider.Settings.Secure
+
+
+
+
 
 class MainActivity : AppCompatActivity() {
 
     private val viewControllers = HashMap<String, BaseViewController>()
 
+    @SuppressLint("HardwareIds")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -40,6 +52,17 @@ class MainActivity : AppCompatActivity() {
         header.avatar = "https://scontent.fmex4-1.fna.fbcdn.net/v/t1.0-1/c4.0.320.320/p320x320/33748331_2486054888087528_1948593341838917632_n.jpg?_nc_cat=0&oh=d8c82668fefa54002a4299b2cdaab295&oe=5BC0B669"
         header.email = "carlos.bedoy@gmail.com"
         header.nickname = "#iambedoy"
+
+        val androidId = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
+
+        val user = User()
+        user.avatar = header.avatar
+        user.nickname = "Carlos Bedoy"
+        user.identifier = UUID.nameUUIDFromBytes(androidId?.toByteArray()).toString()
+
+
+        PNController.registerUser(user)
+
         arrayList.add(header)
 
         var option = Option()

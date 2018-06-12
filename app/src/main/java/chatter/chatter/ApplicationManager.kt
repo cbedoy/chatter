@@ -14,4 +14,10 @@ class ApplicationManager : Application() {
 
         PNController.init()
     }
+
+    override fun onTerminate() {
+        super.onTerminate()
+
+        PNController.destroy()
+    }
 }
